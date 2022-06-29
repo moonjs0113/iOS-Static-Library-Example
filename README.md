@@ -6,11 +6,20 @@
 
 [swift-image]:https://img.shields.io/badge/Swift-5.6-orange?style=flat
 [Xcode-image]: https://img.shields.io/badge/Xcode-13.3-blue?style=flat
-[Platform-image]: https://img.shields.io/badge/iOS-15.0+-blue?style=flat
+[Platform-image]: https://img.shields.io/badge/iOS-15.4+-blue?style=flat
 
 iOS Static Library를 직접 만들어보고 적용해보는 프로젝트입니다.
 
 Custom Button을 Static Library로 만들어보며 학습합니다.
+
+## Repository Structure
+``` shell
+iOS-Static-Library-Example
+├── Library       // Static Library
+├── StaticApp     // App Project
+└── StaticLibrary // Static Library Project
+```
+
 
 ## 1. Create Project
 ### App Project
@@ -65,7 +74,6 @@ public struct CustomButton<L> : View where L : View {
         }
     }
 }
-
 ```
 
 ## 4. Build Simulator & Device
@@ -124,5 +132,5 @@ Library를 M1 CPU에서 만들었기 때문에 x86_64(Intel CPU)에서 빌드될
 -> 실행가능한 오류
 <img src="./gitImage/Error.png">
 
-## 10. Extension
+## 10. Improvement
 - Simulator와 Device 동시에 사용가능한 Binary 파일을 만드는 것
