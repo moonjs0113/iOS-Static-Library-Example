@@ -1,7 +1,7 @@
 version: "Apple Swift version 5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)"
 options: "7d28c4d8277a947e4dca632dcc81821714ac781f27c16522f939abb7ebfdcd93"
-build_start_time: [1657878979, 703515052]
-build_end_time: [1657878981, 862921953]
+build_start_time: [1657880446, 411113023]
+build_end_time: [1657880446, 671793937]
 inputs:
   "/Users/moonjs/XcodePrj/StaticLibrary/StaticFramework/StaticFramework/CustomButton.swift": [1657152068, 793318271]
   "/Users/moonjs/XcodePrj/StaticLibrary/StaticFramework/StaticFramework/StaticEnum.swift": [1657152068, 782331943]
