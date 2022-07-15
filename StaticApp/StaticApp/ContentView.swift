@@ -6,14 +6,14 @@
 //
 
 import SwiftUI
-import StaticLibrary
+import StaticFramework
 
 struct ContentView: View {
     var body: some View {
-        VStack{
-            Text("Hello, world!")
+        VStack {
+            Text("Hello, world! \(StaticNum.one.num)")
             CustomButton {
-                print("Custom Button in Library")
+                staticPrint("Static Print")
             } label: {
                 Text("Static Library Button")
             }

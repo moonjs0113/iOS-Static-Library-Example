@@ -8,9 +8,14 @@
 [Xcode-image]: https://img.shields.io/badge/Xcode-13.3-blue?style=flat
 [Platform-image]: https://img.shields.io/badge/iOS-15.4+-blue?style=flat
 
-iOS Static Library를 직접 만들어보고 적용해보는 프로젝트입니다.
+iOS Static Library/Framework를 직접 만들어보고 적용해보는 프로젝트입니다.
 
-Custom Button을 Static Library로 만들어보며 학습합니다.
+Custom Button을 Static Library/Framework로 만들어보며 학습합니다.
+
+## 이전 시도들
+[Static Library](README-Library.md)
+
+[Divide Scheme](README-Scheme.md)
 
 ## Repository Structure
 ``` shell
@@ -20,41 +25,20 @@ iOS-Static-Library-Example
 └── StaticLibrary // Static Library Project
 ```
 
+---
+## 0. Introduction
+이전 시도에서는 빌드 타겟이 바뀔 때마다 파일을 교체해줘야하는 상황이었다.   
+그래서 이번에는 Scheme를 이용해보았다.
 
-## 1. Create Project
-### App Project
-<img src="./gitImage/Create-App.png">
+## 1. Create Framework Project
+![CreateProj](gitImage/CreateProj-Framework.png)
+Framework를 선택해서 새로운 프로젝트를 만든다.
 
-- Optional
-    - Use Core Data
-    - Include Tests
+## 2. Coding
+아래 세 개의 코드를 테스트 해보려고 한다.
 
-### Library Project
-<img src="./gitImage/Create-Library.png">
-
-## 2. App Project Setting
-### Create Library Folder
-xcodeproj 파일이 있는 곳에 lib 폴더를 생성
-<img src="./gitImage/lib-Folder.png">
-
-App -> Targets-App -> Build Settings -> Select All, Combined
-<img src="./gitImage/App-Project-Setting.png">
-
-> Search Paths -> Library Search Paths
-> <img src="./gitImage/Library-Paths.png">
-> `$(inherited) $(PROJECT_DIR) $(PROJECT_DIR)/lib` 추가
-
-<br>
-
-> Swift Compiler - Search Paths -> Import Paths
-> <img src="./gitImage/Import-Paths.png">
-> `$(inherited) $(PROJECT_DIR) $(PROJECT_DIR)/lib` 추가
-
-## 3. Coding Custom Button in Library Project
 ``` swift
 // CustomButton.swift
-import SwiftUI
-
 public struct CustomButton<L> : View where L : View {
     let role: ButtonRole?
     let action: () -> Void
@@ -76,61 +60,89 @@ public struct CustomButton<L> : View where L : View {
 }
 ```
 
-## 4. Build Simulator & Device
-iOS 기기 시뮬레이터 선택 후 빌드(Command + B)
-<img src="./gitImage/Select-Simulator.png">
-
-Any iOS Device 또는 실제 Device 선택 후 빌드(Command + B)
-<img src="./gitImage/Select-Device.png">
-
-## 5. Find Build File
-Product -> Show Build Folder in Finder
-<img src="./gitImage/Show-Build-Finder.png">
-
-Binary File(.a file)과 Swift Module이 생성됐는지 확인한다.
-<img src="./gitImage/Build-Folder.png">
-
-> App Scheme에 따라 Build Folder명이 Debug 또는 Release로 시작된다.
-> <img src="./gitImage/Debug-Release.png">
-
-## 6. Copy Library File
-테스트할 환경에 맞춰 lib 폴더에 라이브러리 복사
-<img src="./gitImage/Copy-Library.png">
-
-## 7. Import Library
-
-lib 폴더를 project에 추가
-| <img src="./gitImage/Add-Library.png"> | <img src="./gitImage/Select-Library.png"> |
-|-|-|
-
-## 7. Use Library
 ``` swift
-import SwiftUI
-import StaticLibrary
-
-struct ContentView: View {
-    var body: some View {
-        VStack{
-            Text("Hello, world!")
-            CustomButton{
-                print("Custom Button in Library")
-            } label: {
-                Text("Static Library Button")
-            }
+// StaticNum.swift
+public enum StaticNum: Int {
+    case one, two, three
+    
+    public var num: Int {
+        switch self {
+        case .one:
+            return 1
+        case .two:
+            return 2
+        case .three:
+            return 3
         }
     }
 }
 ```
 
+``` swift
+// StaticFunc.swift
+public func staticPrint<T: StringProtocol>(_ text: T) {
+    print(text)
+}
+```
+
+## 3. Add New Aggregate Target
+초기에 Static Library를 진행했을 때와 상황이 동일했다.
+
+파일을 따로 나눴어야 했고, `lipo` 명령어로 합쳐지지도 않았다.
+
+그래서 결국 선택한 것이 [XCFramework](https://help.apple.com/xcode/mac/11.4/#/dev6f6ac218b)이다.
+
+XCFramework를 만들어보자.
+
+Framework 프로젝트에 Aggregate Target을 추가한다.
+![Aggregate](gitImage/Aggregate.png)
+
+## 4. Add Run Script
+
+Aggregate의 `Build Phases` -> `New Run Script Phase` 를 통해 Script를 추가한다.
+``` bash
+# Build Device and Simulator versions
+xcodebuild archive -scheme "${PROJECT_NAME}" -archivePath "${BUILD_DIR}/iphoneos.xcarchive" -sdk iphoneos SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+xcodebuild archive -scheme "${PROJECT_NAME}" -archivePath "${BUILD_DIR}/iphonesimulator.xcarchive" -sdk iphonesimulator SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+
+xcodebuild -create-xcframework \
+    -framework "${BUILD_DIR}/iphoneos.xcarchive/Products/Library/Frameworks/"${PROJECT_NAME}".framework" \
+    -framework "${BUILD_DIR}/iphonesimulator.xcarchive/Products/Library/Frameworks/"${PROJECT_NAME}".framework" \
+    -output "${BUILD_DIR}/"${PROJECT_NAME}".xcframework"
+
+    
+# Copy the xcframework to the project directory
+cp -R "${BUILD_DIR}/"${PROJECT_NAME}".xcframework" "${PROJECT_DIR}"
+
+# Open the project directory in Finder
+open "${PROJECT_DIR}"
+```
+Script를 참고한 레퍼런스 사이트가 있으나, 찾지를 못했다ㅠㅠ 나중에 찾으면 추가할 예정이다.
+
+## 5. Build Framework
+빌드한다!
+![Build-Framework](gitImage/Build-Framework.png)
+
+Script로 인해서 빌드된 xcframework 위치의 파인더가 열릴 것이다.
+
+## 6. App Project Setting
+Framework를 사용할 App Project에서
+
+`App` -> `Targets-App` -> `Build Settings` -> `Select All`, `Combined`에서
+
+`Mach-O Type`의 Value를 Executable로 설정한다.
+![Mach-O-Executable](gitImage/Mach-O-Executable.png)
+
+## 7. Add Framework
+![Add-Framework](gitImage/Add-Framework.png)
+만든 XCFramework를 추가하여 사용한다.
+
 ## 8. App Build
-Build or Run으로 확인한다.
-<img src="./gitImage/Build.png">
+이제 Build Device Target에 상관없이 빌드가 된다!
 
-## 9. Error
-Library를 M1 CPU에서 만들었기 때문에 x86_64(Intel CPU)에서 빌드될 Simulator에 대한 정보가 없다는 오류
+## 9. Conclusion
+정말정말 많은 시행착오를 겪었다.
 
--> 실행가능한 오류
-<img src="./gitImage/Error.png">
+lipo로 Static Library를 묶는 것부터 xcodebuild로 framework를 묶는 것까지 해봤다.
 
-## 10. Improvement
-- Simulator와 Device 동시에 사용가능한 Binary 파일을 만드는 것
+지금의 해답이 처음에 기대한 답은 아니지만(처음엔 xcframework가 아닌 framework로 묶이길 바랬다) 그 이전의 목표는 달성했기에 뿌듯하다!

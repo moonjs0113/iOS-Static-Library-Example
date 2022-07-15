@@ -1,0 +1,741 @@
+{
+  "kind": "Root",
+  "name": "TopLevel",
+  "printedName": "TopLevel",
+  "children": [
+    {
+      "kind": "Import",
+      "name": "Foundation",
+      "printedName": "Foundation",
+      "declKind": "Import",
+      "moduleName": "StaticFramework",
+      "declAttributes": [
+        "RawDocComment"
+      ]
+    },
+    {
+      "kind": "TypeDecl",
+      "name": "StaticNum",
+      "printedName": "StaticNum",
+      "children": [
+        {
+          "kind": "Var",
+          "name": "one",
+          "printedName": "one",
+          "children": [
+            {
+              "kind": "TypeFunc",
+              "name": "Function",
+              "printedName": "(StaticFramework.StaticNum.Type) -> StaticFramework.StaticNum",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "StaticNum",
+                  "printedName": "StaticFramework.StaticNum",
+                  "usr": "s:15StaticFramework0A3NumO"
+                },
+                {
+                  "kind": "TypeNominal",
+                  "name": "Metatype",
+                  "printedName": "StaticFramework.StaticNum.Type",
+                  "children": [
+                    {
+                      "kind": "TypeNominal",
+                      "name": "StaticNum",
+                      "printedName": "StaticFramework.StaticNum",
+                      "usr": "s:15StaticFramework0A3NumO"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "declKind": "EnumElement",
+          "usr": "s:15StaticFramework0A3NumO3oneyA2CmF",
+          "mangledName": "$s15StaticFramework0A3NumO3oneyA2CmF",
+          "moduleName": "StaticFramework",
+          "fixedbinaryorder": 0
+        },
+        {
+          "kind": "Var",
+          "name": "two",
+          "printedName": "two",
+          "children": [
+            {
+              "kind": "TypeFunc",
+              "name": "Function",
+              "printedName": "(StaticFramework.StaticNum.Type) -> StaticFramework.StaticNum",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "StaticNum",
+                  "printedName": "StaticFramework.StaticNum",
+                  "usr": "s:15StaticFramework0A3NumO"
+                },
+                {
+                  "kind": "TypeNominal",
+                  "name": "Metatype",
+                  "printedName": "StaticFramework.StaticNum.Type",
+                  "children": [
+                    {
+                      "kind": "TypeNominal",
+                      "name": "StaticNum",
+                      "printedName": "StaticFramework.StaticNum",
+                      "usr": "s:15StaticFramework0A3NumO"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "declKind": "EnumElement",
+          "usr": "s:15StaticFramework0A3NumO3twoyA2CmF",
+          "mangledName": "$s15StaticFramework0A3NumO3twoyA2CmF",
+          "moduleName": "StaticFramework",
+          "fixedbinaryorder": 1
+        },
+        {
+          "kind": "Var",
+          "name": "three",
+          "printedName": "three",
+          "children": [
+            {
+              "kind": "TypeFunc",
+              "name": "Function",
+              "printedName": "(StaticFramework.StaticNum.Type) -> StaticFramework.StaticNum",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "StaticNum",
+                  "printedName": "StaticFramework.StaticNum",
+                  "usr": "s:15StaticFramework0A3NumO"
+                },
+                {
+                  "kind": "TypeNominal",
+                  "name": "Metatype",
+                  "printedName": "StaticFramework.StaticNum.Type",
+                  "children": [
+                    {
+                      "kind": "TypeNominal",
+                      "name": "StaticNum",
+                      "printedName": "StaticFramework.StaticNum",
+                      "usr": "s:15StaticFramework0A3NumO"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "declKind": "EnumElement",
+          "usr": "s:15StaticFramework0A3NumO5threeyA2CmF",
+          "mangledName": "$s15StaticFramework0A3NumO5threeyA2CmF",
+          "moduleName": "StaticFramework",
+          "fixedbinaryorder": 2
+        },
+        {
+          "kind": "Var",
+          "name": "num",
+          "printedName": "num",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Int",
+              "printedName": "Swift.Int",
+              "usr": "s:Si"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:15StaticFramework0A3NumO3numSivp",
+          "mangledName": "$s15StaticFramework0A3NumO3numSivp",
+          "moduleName": "StaticFramework",
+          "declAttributes": [
+            "AccessControl"
+          ],
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Int",
+                  "printedName": "Swift.Int",
+                  "usr": "s:Si"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:15StaticFramework0A3NumO3numSivg",
+              "mangledName": "$s15StaticFramework0A3NumO3numSivg",
+              "moduleName": "StaticFramework",
+              "accessorKind": "get"
+            }
+          ]
+        },
+        {
+          "kind": "Constructor",
+          "name": "init",
+          "printedName": "init(rawValue:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Optional",
+              "printedName": "StaticFramework.StaticNum?",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "StaticNum",
+                  "printedName": "StaticFramework.StaticNum",
+                  "usr": "s:15StaticFramework0A3NumO"
+                }
+              ],
+              "usr": "s:Sq"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "Int",
+              "printedName": "Swift.Int",
+              "usr": "s:Si"
+            }
+          ],
+          "declKind": "Constructor",
+          "usr": "s:15StaticFramework0A3NumO8rawValueACSgSi_tcfc",
+          "mangledName": "$s15StaticFramework0A3NumO8rawValueACSgSi_tcfc",
+          "moduleName": "StaticFramework",
+          "implicit": true,
+          "declAttributes": [
+            "Inlinable"
+          ],
+          "init_kind": "Designated"
+        },
+        {
+          "kind": "Var",
+          "name": "rawValue",
+          "printedName": "rawValue",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Int",
+              "printedName": "Swift.Int",
+              "usr": "s:Si"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:15StaticFramework0A3NumO8rawValueSivp",
+          "mangledName": "$s15StaticFramework0A3NumO8rawValueSivp",
+          "moduleName": "StaticFramework",
+          "implicit": true,
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Int",
+                  "printedName": "Swift.Int",
+                  "usr": "s:Si"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:15StaticFramework0A3NumO8rawValueSivg",
+              "mangledName": "$s15StaticFramework0A3NumO8rawValueSivg",
+              "moduleName": "StaticFramework",
+              "implicit": true,
+              "declAttributes": [
+                "Inlinable"
+              ],
+              "accessorKind": "get"
+            }
+          ]
+        }
+      ],
+      "declKind": "Enum",
+      "usr": "s:15StaticFramework0A3NumO",
+      "mangledName": "$s15StaticFramework0A3NumO",
+      "moduleName": "StaticFramework",
+      "declAttributes": [
+        "AccessControl"
+      ],
+      "enumRawTypeName": "Int",
+      "isEnumExhaustive": true,
+      "conformances": [
+        {
+          "kind": "Conformance",
+          "name": "Equatable",
+          "printedName": "Equatable",
+          "usr": "s:SQ",
+          "mangledName": "$sSQ"
+        },
+        {
+          "kind": "Conformance",
+          "name": "Hashable",
+          "printedName": "Hashable",
+          "usr": "s:SH",
+          "mangledName": "$sSH"
+        },
+        {
+          "kind": "Conformance",
+          "name": "RawRepresentable",
+          "printedName": "RawRepresentable",
+          "children": [
+            {
+              "kind": "TypeWitness",
+              "name": "RawValue",
+              "printedName": "RawValue",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Int",
+                  "printedName": "Swift.Int",
+                  "usr": "s:Si"
+                }
+              ]
+            }
+          ],
+          "usr": "s:SY",
+          "mangledName": "$sSY"
+        }
+      ]
+    },
+    {
+      "kind": "Import",
+      "name": "Foundation",
+      "printedName": "Foundation",
+      "declKind": "Import",
+      "moduleName": "StaticFramework",
+      "declAttributes": [
+        "RawDocComment"
+      ]
+    },
+    {
+      "kind": "Function",
+      "name": "staticPrint",
+      "printedName": "staticPrint(_:)",
+      "children": [
+        {
+          "kind": "TypeNominal",
+          "name": "Void",
+          "printedName": "()"
+        },
+        {
+          "kind": "TypeNominal",
+          "name": "GenericTypeParam",
+          "printedName": "τ_0_0"
+        }
+      ],
+      "declKind": "Func",
+      "usr": "s:15StaticFramework11staticPrintyyxSyRzlF",
+      "mangledName": "$s15StaticFramework11staticPrintyyxSyRzlF",
+      "moduleName": "StaticFramework",
+      "genericSig": "<τ_0_0 where τ_0_0 : Swift.StringProtocol>",
+      "sugared_genericSig": "<T where T : Swift.StringProtocol>",
+      "declAttributes": [
+        "AccessControl"
+      ],
+      "funcSelfKind": "NonMutating"
+    },
+    {
+      "kind": "Import",
+      "name": "SwiftUI",
+      "printedName": "SwiftUI",
+      "declKind": "Import",
+      "moduleName": "StaticFramework",
+      "declAttributes": [
+        "RawDocComment"
+      ]
+    },
+    {
+      "kind": "TypeDecl",
+      "name": "CustomButton",
+      "printedName": "CustomButton",
+      "children": [
+        {
+          "kind": "Var",
+          "name": "role",
+          "printedName": "role",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Optional",
+              "printedName": "SwiftUI.ButtonRole?",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "ButtonRole",
+                  "printedName": "SwiftUI.ButtonRole",
+                  "usr": "s:7SwiftUI10ButtonRoleV"
+                }
+              ],
+              "usr": "s:Sq"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:15StaticFramework12CustomButtonV4role7SwiftUI0D4RoleVSgvp",
+          "mangledName": "$s15StaticFramework12CustomButtonV4role7SwiftUI0D4RoleVSgvp",
+          "moduleName": "StaticFramework",
+          "declAttributes": [
+            "HasStorage"
+          ],
+          "fixedbinaryorder": 0,
+          "isLet": true,
+          "hasStorage": true,
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Optional",
+                  "printedName": "SwiftUI.ButtonRole?",
+                  "children": [
+                    {
+                      "kind": "TypeNominal",
+                      "name": "ButtonRole",
+                      "printedName": "SwiftUI.ButtonRole",
+                      "usr": "s:7SwiftUI10ButtonRoleV"
+                    }
+                  ],
+                  "usr": "s:Sq"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:15StaticFramework12CustomButtonV4role7SwiftUI0D4RoleVSgvg",
+              "mangledName": "$s15StaticFramework12CustomButtonV4role7SwiftUI0D4RoleVSgvg",
+              "moduleName": "StaticFramework",
+              "genericSig": "<τ_0_0 where τ_0_0 : SwiftUI.View>",
+              "sugared_genericSig": "<L where L : SwiftUI.View>",
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "get"
+            }
+          ]
+        },
+        {
+          "kind": "Var",
+          "name": "action",
+          "printedName": "action",
+          "children": [
+            {
+              "kind": "TypeFunc",
+              "name": "Function",
+              "printedName": "() -> ()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Void",
+                  "printedName": "()"
+                },
+                {
+                  "kind": "TypeNominal",
+                  "name": "Void",
+                  "printedName": "()"
+                }
+              ]
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:15StaticFramework12CustomButtonV6actionyycvp",
+          "mangledName": "$s15StaticFramework12CustomButtonV6actionyycvp",
+          "moduleName": "StaticFramework",
+          "declAttributes": [
+            "HasStorage"
+          ],
+          "fixedbinaryorder": 1,
+          "isLet": true,
+          "hasStorage": true,
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeFunc",
+                  "name": "Function",
+                  "printedName": "() -> ()",
+                  "children": [
+                    {
+                      "kind": "TypeNominal",
+                      "name": "Void",
+                      "printedName": "()"
+                    },
+                    {
+                      "kind": "TypeNominal",
+                      "name": "Void",
+                      "printedName": "()"
+                    }
+                  ]
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:15StaticFramework12CustomButtonV6actionyycvg",
+              "mangledName": "$s15StaticFramework12CustomButtonV6actionyycvg",
+              "moduleName": "StaticFramework",
+              "genericSig": "<τ_0_0 where τ_0_0 : SwiftUI.View>",
+              "sugared_genericSig": "<L where L : SwiftUI.View>",
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "get"
+            }
+          ]
+        },
+        {
+          "kind": "Var",
+          "name": "label",
+          "printedName": "label",
+          "children": [
+            {
+              "kind": "TypeFunc",
+              "name": "Function",
+              "printedName": "() -> τ_0_0",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "GenericTypeParam",
+                  "printedName": "τ_0_0"
+                },
+                {
+                  "kind": "TypeNominal",
+                  "name": "Void",
+                  "printedName": "()"
+                }
+              ]
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:15StaticFramework12CustomButtonV5labelxycvp",
+          "mangledName": "$s15StaticFramework12CustomButtonV5labelxycvp",
+          "moduleName": "StaticFramework",
+          "declAttributes": [
+            "HasStorage"
+          ],
+          "fixedbinaryorder": 2,
+          "isLet": true,
+          "hasStorage": true,
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeFunc",
+                  "name": "Function",
+                  "printedName": "() -> τ_0_0",
+                  "children": [
+                    {
+                      "kind": "TypeNominal",
+                      "name": "GenericTypeParam",
+                      "printedName": "τ_0_0"
+                    },
+                    {
+                      "kind": "TypeNominal",
+                      "name": "Void",
+                      "printedName": "()"
+                    }
+                  ]
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:15StaticFramework12CustomButtonV5labelxycvg",
+              "mangledName": "$s15StaticFramework12CustomButtonV5labelxycvg",
+              "moduleName": "StaticFramework",
+              "genericSig": "<τ_0_0 where τ_0_0 : SwiftUI.View>",
+              "sugared_genericSig": "<L where L : SwiftUI.View>",
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "get"
+            }
+          ]
+        },
+        {
+          "kind": "Constructor",
+          "name": "init",
+          "printedName": "init(role:action:label:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "CustomButton",
+              "printedName": "StaticFramework.CustomButton<τ_0_0>",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "GenericTypeParam",
+                  "printedName": "τ_0_0"
+                }
+              ],
+              "usr": "s:15StaticFramework12CustomButtonV"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "Optional",
+              "printedName": "SwiftUI.ButtonRole?",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "ButtonRole",
+                  "printedName": "SwiftUI.ButtonRole",
+                  "usr": "s:7SwiftUI10ButtonRoleV"
+                }
+              ],
+              "hasDefaultArg": true,
+              "usr": "s:Sq"
+            },
+            {
+              "kind": "TypeFunc",
+              "name": "Function",
+              "printedName": "() -> ()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Void",
+                  "printedName": "()"
+                },
+                {
+                  "kind": "TypeNominal",
+                  "name": "Void",
+                  "printedName": "()"
+                }
+              ]
+            },
+            {
+              "kind": "TypeFunc",
+              "name": "Function",
+              "printedName": "() -> τ_0_0",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "GenericTypeParam",
+                  "printedName": "τ_0_0"
+                },
+                {
+                  "kind": "TypeNominal",
+                  "name": "Void",
+                  "printedName": "()"
+                }
+              ]
+            }
+          ],
+          "declKind": "Constructor",
+          "usr": "s:15StaticFramework12CustomButtonV4role6action5labelACyxG7SwiftUI0D4RoleVSg_yycxyctcfc",
+          "mangledName": "$s15StaticFramework12CustomButtonV4role6action5labelACyxG7SwiftUI0D4RoleVSg_yycxyctcfc",
+          "moduleName": "StaticFramework",
+          "genericSig": "<τ_0_0 where τ_0_0 : SwiftUI.View>",
+          "sugared_genericSig": "<L where L : SwiftUI.View>",
+          "declAttributes": [
+            "AccessControl"
+          ],
+          "init_kind": "Designated"
+        },
+        {
+          "kind": "Var",
+          "name": "body",
+          "printedName": "body",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "OpaqueTypeArchetype",
+              "printedName": "some SwiftUI.View",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "View",
+                  "printedName": "SwiftUI.View",
+                  "usr": "s:7SwiftUI4ViewP"
+                }
+              ]
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:15StaticFramework12CustomButtonV4bodyQrvp",
+          "mangledName": "$s15StaticFramework12CustomButtonV4bodyQrvp",
+          "moduleName": "StaticFramework",
+          "declAttributes": [
+            "Custom",
+            "AccessControl"
+          ],
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "OpaqueTypeArchetype",
+                  "printedName": "some SwiftUI.View",
+                  "children": [
+                    {
+                      "kind": "TypeNominal",
+                      "name": "View",
+                      "printedName": "SwiftUI.View",
+                      "usr": "s:7SwiftUI4ViewP"
+                    }
+                  ]
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:15StaticFramework12CustomButtonV4bodyQrvg",
+              "mangledName": "$s15StaticFramework12CustomButtonV4bodyQrvg",
+              "moduleName": "StaticFramework",
+              "genericSig": "<τ_0_0 where τ_0_0 : SwiftUI.View>",
+              "sugared_genericSig": "<L where L : SwiftUI.View>",
+              "accessorKind": "get"
+            }
+          ]
+        }
+      ],
+      "declKind": "Struct",
+      "usr": "s:15StaticFramework12CustomButtonV",
+      "mangledName": "$s15StaticFramework12CustomButtonV",
+      "moduleName": "StaticFramework",
+      "genericSig": "<τ_0_0 where τ_0_0 : SwiftUI.View>",
+      "sugared_genericSig": "<L where L : SwiftUI.View>",
+      "declAttributes": [
+        "AccessControl"
+      ],
+      "conformances": [
+        {
+          "kind": "Conformance",
+          "name": "View",
+          "printedName": "View",
+          "children": [
+            {
+              "kind": "TypeWitness",
+              "name": "Body",
+              "printedName": "Body",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "OpaqueTypeArchetype",
+                  "printedName": "some SwiftUI.View",
+                  "children": [
+                    {
+                      "kind": "TypeNominal",
+                      "name": "View",
+                      "printedName": "SwiftUI.View",
+                      "usr": "s:7SwiftUI4ViewP"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "usr": "s:7SwiftUI4ViewP",
+          "mangledName": "$s7SwiftUI4ViewP"
+        }
+      ]
+    }
+  ],
+  "json_format_version": 6
+}

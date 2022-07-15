@@ -1,0 +1,30 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)
+// swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name StaticFramework
+import Foundation
+@_exported import StaticFramework
+import Swift
+import SwiftUI
+import _Concurrency
+public enum StaticNum : Swift.Int {
+  case one, two, three
+  public var num: Swift.Int {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public func staticPrint<T>(_ text: T) where T : Swift.StringProtocol
+public struct CustomButton<L> : SwiftUI.View where L : SwiftUI.View {
+  public init(role: SwiftUI.ButtonRole? = .none, action: @escaping () -> Swift.Void, @SwiftUI.ViewBuilder label: @escaping () -> L)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s15StaticFramework12CustomButtonV4bodyQrvp", 0) __<L>
+}
+extension StaticFramework.StaticNum : Swift.Equatable {}
+extension StaticFramework.StaticNum : Swift.Hashable {}
+extension StaticFramework.StaticNum : Swift.RawRepresentable {}

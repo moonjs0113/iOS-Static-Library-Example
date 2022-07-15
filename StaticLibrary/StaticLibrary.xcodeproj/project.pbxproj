@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C7AF834628816853002362C4 /* StaticNum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AF834528816853002362C4 /* StaticNum.swift */; };
 		C7F92D24286BC481007968A9 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F92D23286BC481007968A9 /* CustomButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C7AF834528816853002362C4 /* StaticNum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticNum.swift; sourceTree = "<group>"; };
 		C7F92D20286BC481007968A9 /* libStaticLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libStaticLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7F92D23286BC481007968A9 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				C7F92D23286BC481007968A9 /* CustomButton.swift */,
+				C7AF834528816853002362C4 /* StaticNum.swift */,
 			);
 			path = StaticLibrary;
 			sourceTree = "<group>";
@@ -120,6 +123,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7AF834628816853002362C4 /* StaticNum.swift in Sources */,
 				C7F92D24286BC481007968A9 /* CustomButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

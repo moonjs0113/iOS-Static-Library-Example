@@ -1,0 +1,14 @@
+{
+  'version': 0,
+  'use-external-names': 'false',
+  'case-sensitive': 'false',
+  'roots': [{
+    'type': 'directory',
+    'name': "/Users/moonjs/Library/Developer/Xcode/DerivedData/StaticFramework-fgvbpznmnkguqnhakmdhljmceqjr/Build/Products/Debug-iphoneos/StaticFramework.framework/Modules"
+    'contents': [{
+      'type': 'file',
+      'name': "module.modulemap",
+      'external-contents': "/Users/moonjs/XcodePrj/StaticLibrary/StaticFramework/build/StaticFramework.build/Debug-iphoneos/StaticFramework.build/unextended-module.modulemap",
+    }]
+  }]
+}
