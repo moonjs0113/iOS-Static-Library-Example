@@ -1,0 +1,48 @@
+{
+  "_buildCommand2" : {
+    "command" : "build",
+    "skipDependencies" : false,
+    "style" : "buildAndRun"
+  },
+  "buildCommand" : "build",
+  "configuredTargets" : [
+    {
+      "guid" : "6d8fc4460d1aef821c73aea9fbff260e8154750ba3194cf8e2967229f2714b7e"
+    }
+  ],
+  "containerPath" : "/Users/moonjs/XcodePrj/StaticLibrary/StaticFramework/StaticFramework.xcodeproj",
+  "continueBuildingAfterErrors" : false,
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "configurationName" : "Debug",
+    "overrides" : {
+      "commandLine" : {
+        "table" : {
+          "BITCODE_GENERATION_MODE" : "bitcode",
+          "BUILD_DIR" : "/Users/moonjs/Library/Developer/Xcode/DerivedData/StaticFramework-fgvbpznmnkguqnhakmdhljmceqjr/Build/Products",
+          "BUILD_ROOT" : "/Users/moonjs/Library/Developer/Xcode/DerivedData/StaticFramework-fgvbpznmnkguqnhakmdhljmceqjr/Build/Products",
+          "ONLY_ACTIVE_ARCH" : "NO",
+          "OTHER_CFLAGS" : "-fembed-bitcode",
+          "SDKROOT" : "iphoneos15.4",
+          "TOOLCHAINS" : "com.apple.dt.toolchain.XcodeDefault"
+        }
+      },
+      "synthesized" : {
+        "table" : {
+          "ACTION" : "build",
+          "ENABLE_PREVIEWS" : "NO"
+        }
+      },
+      "toolchainOverride" : "com.apple.dt.toolchain.XcodeDefault"
+    }
+  },
+  "schemeCommand" : "launch",
+  "shouldCollectMetrics" : false,
+  "showNonLoggedProgress" : true,
+  "useDryRun" : false,
+  "useImplicitDependencies" : false,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}

@@ -6,16 +6,14 @@
 //
 
 import SwiftUI
-import StaticFramework
-
-//typealias enumNum = StaticFramework.StaticNum
+import StaticLibrary
 
 struct ContentView: View {
     var body: some View {
         VStack {
-            Text("Hello, world! \(StaticNum.one.num)")
+            Text("Hello, world!")
             CustomButton {
-                staticPrint("Custom Button in Library")
+                print("\(StaticNum.one.num)")
             } label: {
                 Text("Static Library Button")
             }

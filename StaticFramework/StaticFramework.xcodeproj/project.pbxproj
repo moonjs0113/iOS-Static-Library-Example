@@ -18,6 +18,17 @@
 			name = UniversalFramework;
 			productName = UniversalFramework;
 		};
+		C7305CCE28766985005AFB58 /* UniversalFramework2 */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = C7305CCF28766985005AFB58 /* Build configuration list for PBXAggregateTarget "UniversalFramework2" */;
+			buildPhases = (
+				C7305CD228766988005AFB58 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = UniversalFramework2;
+			productName = UniversalFramework2;
+		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
@@ -121,6 +132,9 @@
 					C7305CB828766214005AFB58 = {
 						CreatedOnToolsVersion = 13.3;
 					};
+					C7305CCE28766985005AFB58 = {
+						CreatedOnToolsVersion = 13.3;
+					};
 				};
 			};
 			buildConfigurationList = C7305C952876582E005AFB58 /* Build configuration list for PBXProject "StaticFramework" */;
@@ -138,6 +152,7 @@
 			targets = (
 				C7305C9A2876582E005AFB58 /* StaticFramework */,
 				C7305CB828766214005AFB58 /* UniversalFramework */,
+				C7305CCE28766985005AFB58 /* UniversalFramework2 */,
 			);
 		};
 /* End PBXProject section */
@@ -168,7 +183,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n<<comment\nUNIVERSAL_OUTPUTFOLDER=\"${BUILD_DIR}/${CONFIGURATION}-universal\"\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\" \nxcodebuild BITCODE_GENERATION_MODE=bitcode OTHER_CFLAGS=\"-fembed-bitcode\" -target \"${PROJECT_NAME}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build \nxcodebuild BITCODE_GENERATION_MODE=bitcode OTHER_CFLAGS=\"-fembed-bitcode\" -target \"${PROJECT_NAME}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphonesimulator BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" EXCLUDED_ARCHS=\"arm64\" clean build \ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/\" \ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/Modules/${PROJECT_NAME}.swiftmodule/.\" \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/Modules/${PROJECT_NAME}.swiftmodule\"\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \ncp -R \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework\" \"${PROJECT_DIR}\"\ncomment\n\n\n\n\n# Build Device and Simulator versions\nxcodebuild archive -scheme \"${PROJECT_NAME}\" -archivePath \"${BUILD_DIR}/iphoneos.xcarchive\" -sdk iphoneos SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES\nxcodebuild archive -scheme \"${PROJECT_NAME}\" -archivePath \"${BUILD_DIR}/iphonesimulator.xcarchive\" -sdk iphonesimulator SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES\n\nxcodebuild -create-xcframework \\\n    -framework \"${BUILD_DIR}/iphoneos.xcarchive/Products/Library/Frameworks/\"${PROJECT_NAME}\".framework\" \\\n    -framework \"${BUILD_DIR}/iphonesimulator.xcarchive/Products/Library/Frameworks/\"${PROJECT_NAME}\".framework\" \\\n    -output \"${BUILD_DIR}/\"${PROJECT_NAME}\".xcframework\"\n\n    \n# Copy the xcframework to the project directory\ncp -R \"${BUILD_DIR}/\"${PROJECT_NAME}\".xcframework\" \"${PROJECT_DIR}\"\n\n# Open the project directory in Finder\nopen \"${PROJECT_DIR}\"\n출처: https://magicmon.tistory.com/225 [MaGicMOn:티스토리]\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n<<comment\nUNIVERSAL_OUTPUTFOLDER=\"${BUILD_DIR}/${CONFIGURATION}-universal\"\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\" \nxcodebuild BITCODE_GENERATION_MODE=bitcode OTHER_CFLAGS=\"-fembed-bitcode\" -target \"${PROJECT_NAME}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build \nxcodebuild BITCODE_GENERATION_MODE=bitcode OTHER_CFLAGS=\"-fembed-bitcode\" -target \"${PROJECT_NAME}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphonesimulator BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" EXCLUDED_ARCHS=\"arm64\" clean build \ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/\" \ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/Modules/${PROJECT_NAME}.swiftmodule/.\" \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/Modules/${PROJECT_NAME}.swiftmodule\"\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \ncp -R \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework\" \"${PROJECT_DIR}\"\ncomment\n\n\n# Build Device and Simulator versions\nxcodebuild archive -scheme \"${PROJECT_NAME}\" -archivePath \"${BUILD_DIR}/iphoneos.xcarchive\" -sdk iphoneos SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES\nxcodebuild archive -scheme \"${PROJECT_NAME}\" -archivePath \"${BUILD_DIR}/iphonesimulator.xcarchive\" -sdk iphonesimulator SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES\n\nxcodebuild -create-xcframework \\\n    -framework \"${BUILD_DIR}/iphoneos.xcarchive/Products/Library/Frameworks/\"${PROJECT_NAME}\".framework\" \\\n    -framework \"${BUILD_DIR}/iphonesimulator.xcarchive/Products/Library/Frameworks/\"${PROJECT_NAME}\".framework\" \\\n    -output \"${BUILD_DIR}/\"${PROJECT_NAME}\".xcframework\"\n\n    \n# Copy the xcframework to the project directory\ncp -R \"${BUILD_DIR}/\"${PROJECT_NAME}\".xcframework\" \"${PROJECT_DIR}\"\n\n# Open the project directory in Finder\nopen \"${PROJECT_DIR}\"\n";
+		};
+		C7305CD228766988005AFB58 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-Universal\n  \n# Make sure the output directory exists\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n  \n# Build Device and Simulator versions\nxcodebuild -target \"${PROJECT_NAME}\" BITCODE_GENERATION_MODE=bitcode OTHER_CFLAGS=\"-fembed-bitcode\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphonesimulator BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\nxcodebuild -target \"${PROJECT_NAME}\" BITCODE_GENERATION_MODE=bitcode OTHER_CFLAGS=\"-fembed-bitcode\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n  \n  \n# Copy the framework structure (from iphoneos build) to the universal folder\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n  \n# Copy Swift modules from iphonesimulator build (if it exists) to the copied framework directory\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/Modules/${PROJECT_NAME}.swiftmodule/.\" \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/Modules/${PROJECT_NAME}.swiftmodule\"\n  \n# Create universal binary file using lipo and place the combined executable in the copied framework directory\nlipo -create \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework/${PROJECT_NAME}\" -output \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/${PROJECT_NAME}\"\n  \n# Copy the framework to the project directory\ncp -R \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework\" \"${PROJECT_DIR}\"\n  \n# Open the project directory in Finder\nopen \"${PROJECT_DIR}\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -387,6 +419,24 @@
 			};
 			name = Release;
 		};
+		C7305CD028766985005AFB58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z629PZ4XVL;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C7305CD128766985005AFB58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z629PZ4XVL;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -413,6 +463,15 @@
 			buildConfigurations = (
 				C7305CB928766214005AFB58 /* Debug */,
 				C7305CBA28766214005AFB58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C7305CCF28766985005AFB58 /* Build configuration list for PBXAggregateTarget "UniversalFramework2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7305CD028766985005AFB58 /* Debug */,
+				C7305CD128766985005AFB58 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
